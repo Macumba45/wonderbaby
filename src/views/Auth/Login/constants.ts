@@ -2,13 +2,13 @@ import * as Yup from 'yup';
 
 export const validationSchema = Yup.object().shape({
      email: Yup.string()
-          .email('Email is invalid')
+          .email('Email es inválido')
           .required('Email es requerido'),
 
      password: Yup.string()
-          .min(4, 'Too Short!')
-          .max(16, 'Too Long!')
-          .required('Password es requerido'),
+          .min(1, 'Too Short!')
+          .max(30, 'Too Long!')
+          .required('Contraseña es requerida'),
 });
 
 export const initialValues = {
