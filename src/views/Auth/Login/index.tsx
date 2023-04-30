@@ -1,6 +1,6 @@
-import {FC, memo} from 'react';
-import {Formik} from 'formik';
-import {useNavigate} from 'react-router-dom';
+import { FC, memo } from 'react';
+import { Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,8 +11,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
-import {initialValues, validationSchema} from './constants';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { initialValues, validationSchema } from './constants';
 const logo = require('../../../assets/finalmente-conocemos-sexo-bebe_329181-3230.png');
 
 interface FormValues {
@@ -30,7 +30,7 @@ const Login: FC = () => {
 
      return (
           <ThemeProvider theme={theme}>
-               <Grid container component="main" sx={{height: '100vh'}}>
+               <Grid container component="main" sx={{ height: '100vh' }}>
                     <CssBaseline />
                     <Grid
                          item
@@ -66,7 +66,7 @@ const Login: FC = () => {
                                    alignItems: 'center',
                               }}
                          >
-                              <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
+                              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                                    <LockOutlinedIcon />
                               </Avatar>
                               <Typography component="h1" variant="h5">
@@ -90,7 +90,7 @@ const Login: FC = () => {
                                              onSubmit={(
                                                   e: React.FormEvent<HTMLFormElement>
                                              ) => handleSubmit(values)}
-                                             sx={{mt: 1}}
+                                             sx={{ mt: 1 }}
                                         >
                                              <TextField
                                                   margin="normal"
@@ -112,6 +112,9 @@ const Login: FC = () => {
                                                        errors.email
                                                   }
                                                   autoComplete="current-email"
+                                                  FormHelperTextProps={{
+                                                       style: { marginLeft: 2, marginTop: 5 } // <-- agregar este estilo personalizado
+                                                  }}
                                              />
                                              <TextField
                                                   margin="normal"
@@ -133,6 +136,9 @@ const Login: FC = () => {
                                                        errors.password
                                                   }
                                                   autoComplete="current-password"
+                                                  FormHelperTextProps={{
+                                                       style: { marginLeft: 2, marginTop: 5 } // <-- agregar este estilo personalizado
+                                                  }}
                                              />
 
                                              <Button
@@ -166,7 +172,7 @@ const Login: FC = () => {
                                                        </Link>
                                                   </Grid>
                                              </Grid>
-                                             <Box sx={{mt: 5}}>
+                                             <Box sx={{ mt: 5 }}>
                                                   <Typography
                                                        variant="body2"
                                                        color="textSecondary"
@@ -177,7 +183,7 @@ const Login: FC = () => {
                                                             color="inherit"
                                                             href="https://www.mywebsite.com/"
                                                        >
-                                                            Babies
+                                                            WonderBaby
                                                        </Link>{' '}
                                                        {new Date().getFullYear()}
                                                        {'.'}
